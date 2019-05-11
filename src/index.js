@@ -8,6 +8,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+//list of objects 
+const feebackList = [
+  {feelings: 0 },
+  {understanding: 0 },
+  {support: 0 },
+  {cooment: ''},
+];
 
 
 

@@ -3,9 +3,19 @@ import { connect } from 'react-redux';
 
 
 class FeedbackList extends Component {
-    render(){
-        return(
-            <p>feedback list goes here</p>
+    render() {
+        return (
+            <div>
+                <ul>
+                    {/*where is my data */}
+                    {/*this page will go and talk to the reducer and get the data from state */}
+                    {this.props.reduxState.feedbackReducer.map((feedback, i) => {
+                        return (
+                            feedback={feedback} 
+                        );
+                    })}
+                </ul>
+            </div>
         )
     }
 }
@@ -16,9 +26,9 @@ class FeedbackList extends Component {
 
 const mapReduxStateToProps = (reduxState) => {
     //shortcut for (reduxstate :reduxstate)
-    return{
-      reduxState
+    return {
+        reduxState
     }
-  }
+}
 
 export default connect(mapReduxStateToProps)(FeedbackList);
