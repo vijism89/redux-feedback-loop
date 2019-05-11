@@ -4,6 +4,8 @@ import './App.css';
 // Redux stuff
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
+import FeedbackList from '../FeedbackList/FeedbackList';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
+          <FeedbackForm />
+          <FeedbackList />
         </div>
       </Router>
     );
