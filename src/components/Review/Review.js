@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 
 class Review extends Component {
 
 
     changePage = () => {
-        //TODO Post to server
-
-    
-          this.props.dispatch({type: 'NEW_FEEDBACK', payload:''});
+        
+        let feedbackObject = {
+            ...this.props.reduxState.feedbackReducer
+        }
+        axios.post('/feedback',feedbackObject)
+        .then( response => {
+          console.log(response.data);
+        //  this.props.history.push('/');
+          });
+        this.props.dispatch({type: 'NEW_FEEDBACK', payload:''});
         this.props.history.push('/success');
     }
 
