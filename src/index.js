@@ -19,6 +19,10 @@ const feedbackList = {
 
 
 const feedbackReducer = (state = feedbackList, action) => {
+    if(action.type === 'UPDATE_FEELING'){
+        state.feelings= action.payload;
+        return {...state}
+    }
     return state;
 };
 

@@ -5,10 +5,11 @@ import { connect } from 'react-redux';
 class FeedbackForm extends Component {
 
 feedbackChange = (event) => {
+    event.preventDefault();
     console.log(event.target.value);
-    this.setState({
-   //{event.target.value}
-    });
+    //this.props.reduxState.feedbackReducer.feelings=event.target.value;
+ // TODO: Dispatch here
+        this.props.dispatch({type: 'UPDATE_FEELING', payload:event.target.value});
 }
 
     render(){
@@ -37,7 +38,7 @@ feedbackChange = (event) => {
 const mapReduxStateToProps = (reduxState) => {
     //shortcut for (reduxstate :reduxstate)
     return{
-      reduxState
+     reduxState
     }
   }
 
