@@ -14,7 +14,10 @@ class FeedbackList extends Component {
                             <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
                             <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
                             <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p>
+                            <div>
+                                <button type="text"> INCOMPLETE </button>
                             </div>
+                        </div>
                 </ul>
             </div>
         )

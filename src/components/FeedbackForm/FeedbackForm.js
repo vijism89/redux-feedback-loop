@@ -3,13 +3,22 @@ import { connect } from 'react-redux';
 
 
 class FeedbackForm extends Component {
+
+feedbackChange = (event) => {
+    console.log(event.target.value);
+    this.setState({
+   //{event.target.value}
+    });
+}
+
     render(){
         return(
             <div>
             <form>
             <label>Feeling?</label>
             <br></br>
-             <select name="feedback">
+             <select onChange={this.feedbackChange} name="feedback">
+             <option value="0"> SELECT </option>
              <option value="1"> 1 </option>
              <option value="2"> 2 </option>
              <option value="3"> 3 </option>
