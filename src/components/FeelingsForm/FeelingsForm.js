@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter} from "react-router";
 
-
-class FeedbackForm extends Component {
+class FeelingsForm extends Component {
 
 feedbackChange = (event) => {
     event.preventDefault();
@@ -15,6 +15,7 @@ feedbackChange = (event) => {
     render(){
         return(
             <div>
+            <h3>How are you feeling today?</h3>
             <form>
             <label>Feeling?</label>
             <br></br>
@@ -42,4 +43,4 @@ const mapReduxStateToProps = (reduxState) => {
     }
   }
 
-export default connect(mapReduxStateToProps)(FeedbackForm);
+export default withRouter(connect(mapReduxStateToProps)(FeelingsForm));

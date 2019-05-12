@@ -19,11 +19,29 @@ const feedbackList = {
 
 
 const feedbackReducer = (state = feedbackList, action) => {
-    if(action.type === 'UPDATE_FEELING'){
-        state.feelings= action.payload;
-        return {...state}
-    }
-    return state;
+    //if(action.type === 'UPDATE_FEELING'){
+        //updating the value for feeling first 
+     //   state.feelings= action.payload;
+        //then spreading the state
+      //  return {...state};
+    //}
+    switch (action.type){
+         case 'UPDATE_FEELING':
+        state.feelings = action.payload;
+        break;
+        case 'UPDATE_UNDERSTADING':
+        state.understanding = action.payload;
+        break;
+        case 'UPDATE_SUPPORT':
+        state.support = action.payload;
+        break;
+        case 'UPDATE_COMMENT':
+        state.comment = action.payload;
+        break;
+        default :
+        return {...state};
+        }
+    return {...state};
 };
 
 const storeInstance = createStore(
