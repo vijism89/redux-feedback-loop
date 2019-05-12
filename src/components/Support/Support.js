@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 class Support extends Component {
 
+changePage = () => {
+    this.props.history.push('/comment');
+}
+    
+
 feedbackChange = (event) => {
     event.preventDefault();
     console.log(event.target.value);
@@ -16,7 +21,7 @@ feedbackChange = (event) => {
         return(
             <div>
                 <h3>How well are you being supported?</h3>
-            <form>
+            
             <label>Support?</label>
             <br></br>
              <select onChange={this.feedbackChange} name="feedback">
@@ -27,10 +32,10 @@ feedbackChange = (event) => {
              <option value="4"> 4 </option>
              <option value="5"> 5 </option>
              </select>
-             <input type="submit" value="NEXT" />
+             <button onClick={this.changePage}>NEXT</button>
              <br></br>
              <h3>Review Your Feedback </h3>
-            </form>
+            
             </div>
         )
     }

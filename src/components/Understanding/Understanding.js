@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
+changePage = () => {
+    this.props.history.push('/support');
+}
+    
+
 feedbackChange = (event) => {
     event.preventDefault();
     console.log(event.target.value);
@@ -15,8 +20,7 @@ feedbackChange = (event) => {
     render(){
         return(
             <div>
-                <h3>How well are you understaing the content?</h3>
-            <form>
+            <h3>How well are you understaing the content?</h3>
             <label>Understanding?</label>
             <br></br>
              <select onChange={this.feedbackChange} name="feedback">
@@ -27,10 +31,9 @@ feedbackChange = (event) => {
              <option value="4"> 4 </option>
              <option value="5"> 5 </option>
              </select>
-             <input type="submit" value="NEXT" />
+             <button onClick={this.changePage}>NEXT</button>
              <br></br>
              <h3>Review Your Feedback </h3>
-            </form>
             </div>
         )
     }
