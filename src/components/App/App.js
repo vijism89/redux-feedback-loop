@@ -6,10 +6,13 @@ import { connect } from 'react-redux';
 //import { withRouter} from "react-router";
 import { HashRouter as Router, Route } from 'react-router-dom';
 import FeelingsForm from '../FeelingsForm/FeelingsForm';
-import FeedbackList from '../FeedbackList/FeedbackList';
+//import FeedbackList from '../FeedbackList/FeedbackList';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comment from '../Comment/Comment';
+import Success from '../Success/Success';
+import Review from '../Review/Review';
+
 class App extends Component {
   render() {
     return (
@@ -20,19 +23,15 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
-          <Route exact path ='/' component = {FeelingsForm} />
-          <Route exact path ='/understanding' component = {Understanding} />
-          <Route exact path ='/support' component = {Support} />
-          <Route exact path ='/comment' component = {Comment} />
-         {/* <FeelingsForm />
-          <Understanding />
-          <Support />
-          <Comment />
-          */}
-          <FeedbackList />
+          <Route exact path ='/' component = { FeelingsForm } />
+          <Route exact path ='/understanding' component = { Understanding } />
+          <Route exact path ='/support' component = { Support } />
+          <Route exact path ='/comment' component = { Comment } />
+         
+         <Route exact path ='/review' component = { Review } />
+         <Route exact path ='/success' component ={ Success } />
         </div>
         </Router>
-    
     );
   }
 }

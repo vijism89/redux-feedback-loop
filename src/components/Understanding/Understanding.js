@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'; 
+import FeedbackList from '../FeedbackList/FeedbackList';
 
 
 class Understanding extends Component {
@@ -34,6 +35,7 @@ feedbackChange = (event) => {
              <button onClick={this.changePage}>NEXT</button>
              <br></br>
              <h3>Review Your Feedback </h3>
+             <FeedbackList />
             </div>
         )
     }

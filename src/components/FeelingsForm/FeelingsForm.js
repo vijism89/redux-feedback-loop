@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter} from "react-router";
+import { withRouter} from 'react-router';
+import FeedbackList from '../FeedbackList/FeedbackList';
+
 
 class FeelingsForm extends Component {
 
@@ -34,7 +36,7 @@ feedbackChange = (event) => {
              <button onClick={this.changePage}> NEXT </button>
              <br></br>
              <h3>Review Your Feedback </h3>
-        
+             <FeedbackList />
             </div>
         )
     }

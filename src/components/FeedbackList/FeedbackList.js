@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 
 class FeedbackList extends Component {
+
     render() {
         return (
             <div>
@@ -13,9 +14,9 @@ class FeedbackList extends Component {
                             <p>Feelings: {this.props.reduxState.feedbackReducer.feelings}</p>
                             <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
                             <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
-                            <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p>
+                            <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p> 
                             <div>
-                                <button type="text"> INCOMPLETE </button>
+                                <input type="button" disabled = "disabled" value = "INCOMPLETE"></input>
                             </div>
                         </div>
                 </ul>

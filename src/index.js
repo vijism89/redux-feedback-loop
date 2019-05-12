@@ -10,7 +10,7 @@ import logger from 'redux-logger';
 
 //list of objects 
 
-const feedbackList = {
+const feedbackObject = {
   feelings: 0,
   understanding: 0,
   support: 0,
@@ -18,7 +18,7 @@ const feedbackList = {
 };
 
 
-const feedbackReducer = (state = feedbackList, action) => {
+const feedbackReducer = (state = feedbackObject, action) => {
     //if(action.type === 'UPDATE_FEELING'){
         //updating the value for feeling first 
      //   state.feelings= action.payload;
@@ -37,6 +37,12 @@ const feedbackReducer = (state = feedbackList, action) => {
         break;
         case 'UPDATE_COMMENT':
         state.comment = action.payload;
+        break;
+        case 'NEW_FEEDBACK':
+        state.feelings=0;
+        state.understanding=0;
+        state.support=0
+        state.comment = '';
         break;
         default :
         return {...state};

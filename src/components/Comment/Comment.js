@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import FeedbackList from '../FeedbackList/FeedbackList';
 
 
 class Comment extends Component {
+
+changePage = () => {
+    this.props.history.push('/review');
+}
 
 feedbackChange = (event) => {
     event.preventDefault();
@@ -11,19 +16,17 @@ feedbackChange = (event) => {
  // TODO: Dispatch here
         this.props.dispatch({type: 'UPDATE_COMMENT', payload:event.target.value});
 }
-
-    render(){
+render(){
         return(
             <div>
                 <h3>Any comments you want to leave?</h3>
-            <form>
             <label>Comments</label>
             <br></br>
              <input type="text" onChange={this.feedbackChange} />
-             <input type="submit" value="NEXT" />
+             <button onClick={this.changePage}> NEXT </button>
              <br></br>
              <h3>Review Your Feedback </h3>
-            </form>
+             <FeedbackList />
             </div>
         )
     }
