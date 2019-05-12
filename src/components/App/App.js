@@ -17,6 +17,7 @@ class App extends Component {
             <h4><i>Don't forget it!</i></h4>
           </header>
           <br />
+          <h4>How are you feeling today?</h4>
           <FeedbackForm />
           <FeedbackList />
         </div>

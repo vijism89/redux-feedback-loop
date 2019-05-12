@@ -9,7 +9,7 @@ class FeedbackList extends Component {
                 <ul>
                     {/*where is my data */}
                     {/*this page will go and talk to the reducer and get the data from state */}
-                            <div >
+                        <div >
                             <p>Feelings: {this.props.reduxState.feedbackReducer.feelings}</p>
                             <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
                             <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
