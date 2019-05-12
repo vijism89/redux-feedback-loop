@@ -9,20 +9,17 @@ class FeedbackList extends Component {
                 <ul>
                     {/*where is my data */}
                     {/*this page will go and talk to the reducer and get the data from state */}
-                    {this.props.reduxState.feedbackReducer.map((feedback, i) => {
-                        return (
-                            feedback={feedback} 
-                        );
-                    })}
+                            <div >
+                            <p>Feelings: {this.props.reduxState.feedbackReducer.feelings}</p>
+                            <p>Understanding: {this.props.reduxState.feedbackReducer.understanding}</p>
+                            <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
+                            <p>Comment: {this.props.reduxState.feedbackReducer.comment}</p>
+                            </div>
                 </ul>
             </div>
         )
     }
 }
-
-
-
-
 
 const mapReduxStateToProps = (reduxState) => {
     //shortcut for (reduxstate :reduxstate)

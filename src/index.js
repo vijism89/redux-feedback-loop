@@ -9,19 +9,22 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 //list of objects 
-const feebackList = [
-  {feelings: 0 },
-  {understanding: 0 },
-  {support: 0 },
-  {cooment: ''},
-];
+
+const feedbackList = {
+  feelings: 0,
+  understanding: 0,
+  support: 0,
+  comment: '',
+};
 
 
-
+const feedbackReducer = (state = feedbackList, action) => {
+    return state;
+};
 
 const storeInstance = createStore(
     combineReducers({
-        
+        feedbackReducer
     }),
     applyMiddleware(logger),
 );
