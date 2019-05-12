@@ -15,17 +15,11 @@ feedbackChange = (event) => {
     render(){
         return(
             <div>
+                <h3>Any comments you want to leave?</h3>
             <form>
-            <label>Feeling?</label>
+            <label>Comments</label>
             <br></br>
-             <select onChange={this.feedbackChange} name="feedback">
-             <option value="0"> SELECT </option>
-             <option value="1"> 1 </option>
-             <option value="2"> 2 </option>
-             <option value="3"> 3 </option>
-             <option value="4"> 4 </option>
-             <option value="5"> 5 </option>
-             </select>
+             <input type="text" onChange={this.feedbackChange} />
              <input type="submit" value="NEXT" />
              <br></br>
              <h3>Review Your Feedback </h3>

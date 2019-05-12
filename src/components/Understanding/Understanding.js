@@ -15,8 +15,9 @@ feedbackChange = (event) => {
     render(){
         return(
             <div>
+                <h3>How well are you understaing the content?</h3>
             <form>
-            <label>Feeling?</label>
+            <label>Understanding?</label>
             <br></br>
              <select onChange={this.feedbackChange} name="feedback">
              <option value="0"> SELECT </option>
