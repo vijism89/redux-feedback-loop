@@ -35,6 +35,7 @@ feedbackChange = (event) => {
              <button onClick={this.changePage}>NEXT</button>
              <br></br>
              <h3>Review Your Feedback </h3>
+             {/* appending my feedbacklist only in the pages where i want*/}
              <FeedbackList />
             </div>
         )

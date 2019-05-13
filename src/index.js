@@ -38,6 +38,7 @@ const feedbackReducer = (state = feedbackObject, action) => {
         case 'UPDATE_COMMENT':
         state.comment = action.payload;
         break;
+        //setting up the value back in the first page
         case 'NEW_FEEDBACK':
         state.feelings=0;
         state.understanding=0;

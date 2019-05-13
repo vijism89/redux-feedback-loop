@@ -2,27 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter} from 'react-router';
 import FeedbackList from '../FeedbackList/FeedbackList';
-
+import '../App/App.css';
+import Button from '@material-ui/core/Button';
 
 class FeelingsForm extends Component {
 
 changePage = () => {
+//navigating to the next page
     this.props.history.push('/understanding');
 }
 
 feedbackChange = (event) => {
     event.preventDefault();
     console.log(event.target.value);
-    //this.props.reduxState.feedbackReducer.feelings=event.target.value;
- // TODO: Dispatch here
+    // TODO: Dispatch here to update the newvalue
         this.props.dispatch({type: 'UPDATE_FEELING', payload:event.target.value});
 }
 
     render(){
         return(
-            <div>
+            <>
+            <div className= "formStyle">
             <h3>How are you feeling today?</h3>
-            
             <label>Feeling?</label>
             <br></br>
              <select onChange={this.feedbackChange} name="feedback">
@@ -33,11 +34,15 @@ feedbackChange = (event) => {
              <option value="4"> 4 </option>
              <option value="5"> 5 </option>
              </select>
-             <button onClick={this.changePage}> NEXT </button>
+             <Button className="button1" onClick={this.changePage}> NEXT </Button>
+             </div>
              <br></br>
+             <div className= "review">
              <h3>Review Your Feedback </h3>
+             {/* appending my feedbacklist only in the pages where i want*/}
              <FeedbackList />
-            </div>
+             </div>
+           </>
         )
     }
 }

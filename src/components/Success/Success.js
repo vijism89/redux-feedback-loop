@@ -5,21 +5,19 @@ import { withRouter } from 'react-router';
 
 class Success extends Component {
 
-changePage = () => {
-    this.props.history.push('/');
-}
-
-
-    render(){
-        return(
+    changePage = () => {
+        this.props.history.push('/');
+    }
+    render() {
+        return (
             <div>
-            <div>
-              <h1>FEEDBACK!</h1>
-            </div>
-            <div>
-                <h2>Thank You!</h2>
-            </div>
-            <input type="submit" onClick={this.changePage} value="Leave New Feedback"/>
+                <div>
+                    <h1>FEEDBACK!</h1>
+                </div>
+                <div>
+                    <h2>Thank You!</h2>
+                </div>
+                <input type="submit" onClick={this.changePage} value="Leave New Feedback" />
             </div>
         )
     }
@@ -27,9 +25,9 @@ changePage = () => {
 
 const mapReduxStateToProps = (reduxState) => {
     //shortcut for (reduxstate :reduxstate)
-    return{
-     reduxState
+    return {
+        reduxState
     }
-  }
+}
 
 export default withRouter(connect(mapReduxStateToProps)(Success));

@@ -2,16 +2,8 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-router.delete('/:id', (req, res) => { 
-    console.log(req.params.id);  
-    // TODO: Use filter to remove the artist
-    // let artist = artists.filter(artist => artist.id == req.params.id);
-    //  console.log(artist);
-    //  artists.splice( artists.indexOf ( artist ),1);
-    // res.send(200);
-});
 
-// GET all the books
+// POST request to database 
 router.post('/',async (req, res) => {
     console.log('Feedback POST with', req.body);
     const client = await pool.connect();
@@ -35,12 +27,36 @@ router.post('/',async (req, res) => {
         client.release()
     }
     
-}); // END GET Route
+}); // END Route
 
-// GET all the books
-router.get('/', (req, res) => {
-    //res.send(artists);
-}); // END GET Route
+router.get('/', (req,res) => {
+    let sqlQuery = `
+        SELECT * FROM "feedback" ORDER BY "id" DESC;
+    `
+    pool.query(sqlQuery)
+    .then((result) => {
+        console.log('response from GET route:', result.rows);
+        res.send(result.rows);        
+    }).catch((error) => {
+        console.log("error in GET route:", error);
+        res.sendStatus(500);
+    });
+})
+
+router.delete('/delete/:id', (req, res) => {
+    let sqlQuery = `
+        DELETE FROM "feedback"
+        WHERE "id" = $1;
+    `
+    pool.query(sqlQuery, [req.params.id])
+    .then((result) => {
+        console.log('response from DELETE route:', result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error in DELTE route:', error);
+        res.sendStatus(500);
+    });
+})
 
 
 module.exports = router;
